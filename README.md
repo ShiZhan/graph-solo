@@ -8,4 +8,5 @@ Includes:
 
 * [GraphChi](https://github.com/GraphChi/graphchi-cpp)
 * [X-Stream](https://github.com/epfl-labos/x-stream)
+* [GridGraph](https://github.com/thu-pacman/GridGraph)
 
