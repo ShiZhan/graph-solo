@@ -10,4 +10,5 @@ Includes:
 * [X-Stream](https://github.com/epfl-labos/x-stream)
 * [GridGraph](https://github.com/thu-pacman/GridGraph)
 * [Ligra](https://github.com/jshun/ligra)
+* [SNAP](https://github.com/snap-stanford/snap)
 
