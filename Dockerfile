@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y wget unzip build-essential \
         libboost-thread-dev \
         libcilkrts5 \
         graphviz
-RUN apt-get clean && rm -rf /var/lib/apt/lists
+RUN apt-get clean && rm -Rf /var/lib/apt/lists
 
 RUN cd / && wget https://github.com/epfl-labos/x-stream/archive/9cf34b3415219bdcf41c67c0881b28b6fd1beb90.zip \
         && unzip 9cf34b3415219bdcf41c67c0881b28b6fd1beb90.zip \
