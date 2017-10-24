@@ -33,7 +33,7 @@ RUN cd / && wget https://github.com/snap-stanford/snap/archive/master.zip && unz
 RUN mv snap-master snap && cd snap && make all
 
 RUN cd / && wget https://github.com/ShiZhan/generator/archive/master.zip && unzip master.zip && rm master.zip
-RUN mv generator-master generator && cd generator && make && make test
+RUN mv generator-master generator && cd generator/src && make && make test
 
 VOLUME /datasets
 WORKDIR /datasets
