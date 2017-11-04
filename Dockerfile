@@ -36,8 +36,14 @@ RUN mv gstore-master gstore && cd gstore && make
 
 RUN cd / && wget https://github.com/iHeartGraph/Graphene/archive/master.zip && unzip master.zip && rm master.zip
 RUN mv Graphene-master graphene && \
-        cd /graphene/graphene/test && for d in *; do [ -d $d ] && cd $d; make; done && \
-        cd /graphene/converter && for d in *; do [ -d $d ] && cd $d; make; done
+        cd /graphene/graphene/test && \
+                for d in *; do \
+                        [ -d $d ] && (cd $d; sed -i 's/^flags = .*/ & -L..\/..\/lib\//g' Makefile; make); \
+                done && \
+        cd /graphene/converter && \
+                for d in *; do \
+                        [ -d $d ] && (cd $d; make); \
+                done
 
 RUN cd / && wget https://github.com/jshun/ligra/archive/master.zip && unzip master.zip && rm master.zip
 ENV CILK 1
