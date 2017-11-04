@@ -23,7 +23,7 @@ RUN mv x-stream-9cf34b3415219bdcf41c67c0881b28b6fd1beb90 x-stream \
         && cd x-stream && mkdir object_files && mkdir bin && make
 
 RUN cd / && wget https://github.com/epfl-labos/EverythingGraph/archive/master.zip && unzip master.zip && rm master.zip
-RUN mv EverythingGraph-master EverythingGraph && cd EverythingGraph && make
+RUN mv EverythingGraph-master everything-graph && cd everything-graph && make
 
 RUN cd / && wget https://github.com/GraphChi/graphchi-cpp/archive/master.zip && unzip master.zip && rm master.zip
 RUN mv graphchi-cpp-master graphchi && cd graphchi && make
@@ -33,6 +33,11 @@ RUN mv GridGraph-master gridgraph && cd gridgraph && make
 
 RUN cd / && wget https://github.com/iHeartGraph/gstore/archive/master.zip && unzip master.zip && rm master.zip
 RUN mv gstore-master gstore && cd gstore && make
+
+RUN cd / && wget https://github.com/iHeartGraph/Graphene/archive/master.zip && unzip master.zip && rm master.zip
+RUN mv Graphene-master graphene && \
+        cd /graphene/graphene/test && for d in *; do [ -d $d ] && cd $d; make; done && \
+        cd /graphene/converter && for d in *; do [ -d $d ] && cd $d; make; done
 
 RUN cd / && wget https://github.com/jshun/ligra/archive/master.zip && unzip master.zip && rm master.zip
 ENV CILK 1
