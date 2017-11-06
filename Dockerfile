@@ -47,7 +47,7 @@ RUN mv Graphene-master graphene && \
 
 RUN cd / && wget https://github.com/jshun/ligra/archive/master.zip && unzip master.zip && rm master.zip
 ENV CILK 1
-RUN mv ligra-master ligra && cd ligra/apps && make
+RUN mv ligra-master ligra && cd /ligra/apps && make && cd /ligra/utils && make
 
 RUN cd / && wget https://github.com/snap-stanford/snap/archive/master.zip && unzip master.zip && rm master.zip
 RUN mv snap-master snap && cd snap && make all
