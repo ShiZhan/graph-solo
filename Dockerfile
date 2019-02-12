@@ -60,8 +60,9 @@ RUN cd /graph && \
     unzip master.zip && rm master.zip && mv ligra-master ligra && \
     cd ligra/apps && make && cd ../utils && make
 
+# snap commit on 2 Aug 2018
 RUN cd /graph && \
-    wget https://github.com/snap-stanford/snap/archive/master.zip && \
+    wget https://github.com/snap-stanford/snap/archive/86ac647a011a8de43e8b1af6a9a45a737a69d886.zip && \
     unzip master.zip && rm master.zip && mv snap-master snap && \
     cd snap && make all && cd examples/motifcluster && make
 
